@@ -1,3 +1,20 @@
 body {
     background-color: #353D4F;
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+    margin: 0;
+    padding: 2rem 0;
+    width : 100%;
+}
+
+main {
+    background: white;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 2rem 0;
+}
+
+h1 {
+    margin: 3rem 1rem 6rem 1rem;
 }
