@@ -16,33 +16,31 @@
                 </h1>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Apollo_and_Daphne_by_Bernini%2C_Galleria_Borghese_%2831563085387%29.jpg/512px-Apollo_and_Daphne_by_Bernini%2C_Galleria_Borghese_%2831563085387%29.jpg" alt="A photo of Bernini's 'Apollo and Daphne'">
             </section>
-            <section class="comment">
-                <h2>
-                    Comments
-                </h2>
-                <section>
-                    <h3>Elena said:</h3>
-                    <p> 
-                        "This looks so life-like I can barely believe it's made of marble!"
-                    </p>
-                </section>                
+            <section id='comments'>
+                <h2>Comments</h2>
+                <section class='comment'>
+                    <h3>Michelangelo said:</h3>
+                    <p>"Great work on that chiseling. The marble looks almost like clay!"</p>
+                </section>
             </section>
-            <form>
+            <form onsubmit="submitComment(); return false">
                 <div class="formSection">
-                    <label>Name:</label>
-                    <input type="text">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name">
                 </div>
                 <div class="formSection">
-                    <label>Message:</label>
-                    <textarea></textarea>
+                    <label for="msg">Message:</label>
+                    <textarea id="msg"></textarea>
                 </div>
-                <div>
+                <div class="button">
                     <button type="default">Post your comment</button>
                 </div>
             </form>
         </main>
         <footer>
-                <p>Made with ❤ at Codaisseur</p>    
+            <p>Made with ❤ at Codaisseur</p>    
         </footer>
+        <script src="detail-page.js"></script>
     </body>
 </html>
+
