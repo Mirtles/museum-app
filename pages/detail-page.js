@@ -395,15 +395,12 @@ const data = {
     ]
   }
 
-
-
-
 let currentPainting = 0
 const paintings = data.artObjects
 
-
 const h1 = document.getElementById("title");
 const img = document.getElementById("image");
+const tab = document.getElementById("tab");
 
 populatePage(currentPainting)
 
@@ -411,9 +408,11 @@ function populatePage(current) {
     const painting = paintings[currentPainting];
     const title = painting.longTitle
     const url = painting.webImage.url
+    const shortTitle = painting.title
     h1.textContent = title
     img.src = url
     img.alt = `A photo of ${title}`
+    tab.textContent = shortTitle
 }
     
 
