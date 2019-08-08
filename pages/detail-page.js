@@ -18,7 +18,7 @@ function submitComment() {
     comment.classList.add("comment")
     comment.appendChild(h3);
 
-    // style bad words
+
     if (hasBadWords(msg) > 0) {
         p.classList.add("bad-word");
         const p2 = document.createElement("p");
@@ -395,15 +395,46 @@ const data = {
     ]
   }
 
-const i = 0 //replace for each painting
-const painting = data.artObjects[0]
+
+
+
+let currentPainting = 0
+const paintings = data.artObjects
+
+
 const h1 = document.getElementById("title");
 const img = document.getElementById("image");
-const title = painting.longTitle
-const url = painting.webImage.url
 
-h1.textContent = title
-img.src = url
-img.alt = `A photo of ${title}`
+populatePage(currentPainting)
 
-console.log(title)
+function populatePage(current) {
+    const painting = paintings[currentPainting];
+    const title = painting.longTitle
+    const url = painting.webImage.url
+    h1.textContent = title
+    img.src = url
+    img.alt = `A photo of ${title}`
+}
+    
+
+const prevButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+
+prevButton.addEventListener("click", prevFunc);
+nextButton.addEventListener("click", nextFunc);
+
+function prevFunc(){
+    currentPainting -= 1;
+        if(currentPainting === -1){
+            currentPainting = paintings.length-1
+        }
+    populatePage(currentPainting)
+}
+
+function nextFunc(){
+    currentPainting += 1;
+        if(currentPainting === paintings.length){
+            currentPainting = 0
+        }
+    populatePage(currentPainting)
+}
