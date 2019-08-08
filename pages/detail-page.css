@@ -155,3 +155,16 @@ footer {
 .bad-word {
     opacity: .5;
 }
+
+.painting-selector {
+    text-decoration: none;
+    display: inline-block;
+    margin: 1rem;
+}
+
+.prev-next {
+    color: white;
+    background-color: #353D4F;
+    padding: .5rem;
+    cursor: default;
+}
