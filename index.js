@@ -324,20 +324,30 @@ const data = {
     ]
   }
 
- 
-
-let paintings = data.artObjects;
+const paintings = data.artObjects;
 const gallery = document.getElementById("gallery");
 
 function displayPainting (painting) {
-  let a = document.createElement('a');
-  a.setAttribute("href", "./pages/detail-page.html");
-  let img = document.createElement('img');
-  img.setAttribute("alt", painting.title);
-  img.setAttribute("class", "artObject");
-  img.setAttribute("src", painting.webImage.url)
-  a.appendChild(img);
-  gallery.appendChild(a);
+  const title = painting.longTitle
+  const src = painting.webImage.url
+  const gallery = document.getElementById('gallery');
+  const width = painting.webImage.width
+  const artist = painting.principalOrFirstMaker;
+  const honthorst = artist.includes("Honthorst");
+  const year = title.replace(/[^0-9]/g,'').substr(-4);
+
+  if (year < 1800 && !honthorst && width > 500) {
+    const a = document.createElement('a');
+    a.href = "./pages/detail-page.html";
+    
+    const img = document.createElement('img');
+    img.alt = title;
+    img.class = "artObject";
+    img.src = src;
+  
+    a.appendChild(img);
+    gallery.appendChild(a);
+  }
 }
 
 for (let i=0; i<paintings.length; i++) {
